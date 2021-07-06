@@ -1,6 +1,5 @@
 package com.bridgelabz.addressbook;
 
-*/
 import java.util.*;
 
 public class AddressBookMain {
@@ -15,6 +14,9 @@ public class AddressBookMain {
 			System.out.println("3. Delete Address Book");
 			System.out.println("4. Search Contact Data");
 			System.out.println("5. View Contact Data");
+
+			System.out.println("6. Count Contacts ");
+			System.out.println("7. Exit");
 
 			System.out.println("6. Count Contacts ");
 			System.out.println("7. Exit");
