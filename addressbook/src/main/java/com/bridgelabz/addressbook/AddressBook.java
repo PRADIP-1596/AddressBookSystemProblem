@@ -1,12 +1,7 @@
 package com.bridgelabz.addressbook;
 
 import java.util.*;
-
-
 import java.util.function.Function;
-
-
-
 import java.util.stream.Collectors;
 
 public class AddressBook {
@@ -38,35 +33,41 @@ public class AddressBook {
 				.collect(Collectors.toList());
 	}
 
+	// method for search contact by City
 	public static List<Contacts> searchByCity(String city) {
 		return contactList.stream().filter(person -> person.getCity().equalsIgnoreCase(city))
 				.collect(Collectors.toList());
 	}
 
+	// method for search contact by State
 	public static List<Contacts> searchByState(String state) {
 		return contactList.stream().filter(person -> person.getState().equalsIgnoreCase(state))
 				.collect(Collectors.toList());
 	}
 
+	// method for view contact by name
 	public static void viewByName(Map<String, Contacts> nameHashMap) {
 		nameHashMap.entrySet().stream().forEach(e -> System.out.println(e.getKey() + "=" + e.getValue().toString()));
 	}
 
+	// method for view contact by city
 	public static void viewByCity(Map<String, Contacts> cityHashMap) {
 		cityHashMap.entrySet().stream().forEach(e -> System.out.println(e.getKey() + "=" + e.getValue().toString()));
 	}
 
+	// method for view contact by State
 	public static void viewByState(Map<String, Contacts> stateHashMap) {
 		stateHashMap.entrySet().stream().forEach(e -> System.out.println(e.getKey() + "=" + e.getValue().toString()));
+	}
 
-
+	// method for sort contact by name, city, state
 	public List<Contacts> sortBy(Function<? super Contacts, ? extends String> key) {
 		return contactList.stream().sorted(Comparator.comparing(key)).collect(Collectors.toList());
 	}
 
+	// method for sort contact by zip
 	public List<Contacts> sortByZip(Function<? super Contacts, ? extends Long> key) {
 		return contactList.stream().sorted(Comparator.comparing(key)).collect(Collectors.toList());
-
 	}
 
 	// method for edit contact
@@ -130,12 +131,8 @@ public class AddressBook {
 			System.out.println("2. Edit contact details");
 			System.out.println("3. Delete contact details");
 			System.out.println("4. Show contacts details");
-
 			System.out.println("5. Sort Address Book");
 			System.out.println("6. Back to main menu");
-
-			System.out.println("5. Back to main menu");
-
 			System.out.print("Enter Your choice: ");
 			int choice = sc.nextInt();
 			sc.nextLine();
@@ -188,12 +185,9 @@ public class AddressBook {
 				System.out.println(toString()); // call tostring method for showing details
 				break;
 			case 5:
-
 				sortByOption();
 				break;
 			case 6:
-
-
 				return;
 			default:
 				System.out.println("Invalid Choice!");
@@ -260,7 +254,6 @@ public class AddressBook {
 		}
 	}
 
-
 	public static void countByOption() {
 		System.out.println("1. Count City ");
 		System.out.println("2. Count State");
@@ -285,7 +278,6 @@ public class AddressBook {
 			System.out.println("Invalid Option");
 		}
 	}
-
 
 	public static void sortByOption() {
 		System.out.println("1. By first name");
@@ -320,5 +312,4 @@ public class AddressBook {
 			System.out.println("INVALID CHOICE!");
 		}
 	}
-
 }
