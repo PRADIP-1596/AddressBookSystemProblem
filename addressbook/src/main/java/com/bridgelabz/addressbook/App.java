@@ -4,7 +4,7 @@ package com.bridgelabz.addressbook;
  * Hello world!
  *
  */
-public class App 
+public class Addressbook
 {
     public static void main( String[] args )
     {
